@@ -36,3 +36,9 @@
     transform: rotate(360deg);
   }
 }
+
+#calcApp{
+  width: auto;
+  height: 100%;
+  border: 0.1em solid burlywood;
+}
