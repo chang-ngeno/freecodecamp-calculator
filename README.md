@@ -1,49 +1,36 @@
-# Django Rest Framework & React-redux Boilerplate
-## Uses Django auth and tokenAuthentication
-
-It is do-it-yourself Django + React Boilerplate for starting your SaaS application. In existing boilerplates for Django+React (or just for Django) there are very often too many features provided (do you really need traefik for MVP?). So before starting, you need to remove a lot of functionality that you don't need or simply don't understand. 
-
-I decided to create a simple Django+React boilerplate with step-by-step instructions how to build it. During building you can decide what you need or not. And for sure you learn a lot about Django and React. I hope it will provide good and quick starting point for creating SaaS applications. I would like to create real SaaS applications based on this boilerplate with step-by-step tutorials how they were created. They will be available at [SaaSitive](https://saasitive.com) website.
-
-## Features (already implemented or planned)
-
-- Backend with Django Rest Framework
-- Frontend with React 
-- Bootstrap for styling
-- Deployment with docker-compose on single VPS
-- SSL certificate from Let's encrypt
-- PostgreSQL database (not yet configured)
-- Authentication with DRF `authtoken` and [Djoser](https://djoser.readthedocs.io/en/latest/)
-- AWS SES for Email sending (not yet implemented)
-- python-decuple for secrets
-- Payments with Stripe (not yet implemented)
-- Step-by-step instructions how to deploy and how to update application
-
-## Live Website
-
-You can play with this bolierplate at: [https://boilerplate.saasitive.com](https://boilerplate.saasitive.com) - deployed to t2.micro EC2 instance with docker-compose.
-
-## Step-by-step instructions:
-1. [Starting SaaS with Django and React](https://saasitive.com/tutorial/django-react-boilerplate-saas/) (tag [v1](https://github.com/saasitive/django-react-boilerplate/tree/v1)) 
-2. [React Routing and Components for Signup and Login](https://saasitive.com/tutorial/react-routing-components-signup-login/) (tag [v2](https://github.com/saasitive/django-react-boilerplate/tree/v2))
-3. [Token Based Authentication with Django Rest Framework and Djoser](https://saasitive.com/tutorial/token-based-authentication-django-rest-framework-djoser/) (tag [v3](https://github.com/saasitive/django-react-boilerplate/tree/v3))
-4. [React Token Based Authentication to Django REST API Backend](https://saasitive.com/tutorial/react-token-based-authentication-django/) (tag [v4](https://github.com/saasitive/django-react-boilerplate/tree/v4))
-5. [React Authenticated Component](https://saasitive.com/tutorial/react-authenticated-component/)  (tag [v5](https://github.com/saasitive/django-react-boilerplate/tree/v5))
-6. [CRUD in Django Rest Framework and React](https://saasitive.com/tutorial/crud-django-rest-framework-react/) (tag [v6](https://github.com/saasitive/django-react-boilerplate/tree/v6))
-7. [Docker-Compose for Django and React with Nginx reverse-proxy and Let's encrypt certificate](https://saasitive.com/tutorial/docker-compose-django-react-nginx-let-s-encrypt/) (tag [v7](https://github.com/saasitive/django-react-boilerplate/tree/v7))
-8. [Django Rest Framework Email Verification](https://saasitive.com/tutorial/django-rest-framework-email-verification/) (tag [v8](https://github.com/saasitive/django-react-boilerplate/tree/v8))
-9. [Django Rest Framework Reset Password](https://saasitive.com/tutorial/django-rest-framework-reset-password/) (tag [v9](https://github.com/saasitive/django-react-boilerplate/tree/v9))
+# Front End Development Libraries
+## React-redux calculator
 
 
-More articles coming soon!
+## Features/User Stories (already implemented or planned)
 
-## Screenshots
+- User Story #2: My calculator should contain 10 clickable elements containing one number each from 0-9, with the following corresponding IDs: id="zero", id="one", id="two", id="three", id="four", id="five", id="six", id="seven", id="eight", and id="nine".
 
-<kbd><img src="https://raw.githubusercontent.com/saasitive/media/main/home_view.png" /></kbd>
+- User Story #3: My calculator should contain 4 clickable elements each containing one of the 4 primary mathematical operators with the following corresponding IDs: id="add", id="subtract", id="multiply", id="divide".
 
-<kbd><img src="https://raw.githubusercontent.com/saasitive/media/main/signup.png" /></kbd>
+- User Story #4: My calculator should contain a clickable element containing a . (decimal point) symbol with a corresponding id="decimal".
 
-<kbd><img src="https://raw.githubusercontent.com/saasitive/media/main/login.png" /></kbd>
+- User Story #5: My calculator should contain a clickable element with an id="clear".
 
-<kbd><img src="https://raw.githubusercontent.com/saasitive/media/main/dashboard.png" /></kbd>
+- User Story #6: My calculator should contain an element to display values with a corresponding id="display".
 
+- User Story #7: At any time, pressing the clear button clears the input and output values, and returns the calculator to its initialized state; 0 should be shown in the element with the id of display.
+
+- User Story #8: As I input numbers, I should be able to see my input in the element with the id of display.
+
+- User Story #9: In any order, I should be able to add, subtract, multiply and divide a chain of numbers of any length, and when I hit =, the correct result should be shown in the element with the id of display.
+
+- User Story #10: When inputting numbers, my calculator should not allow a number to begin with multiple zeros.
+
+- User Story #11: When the decimal element is clicked, a . should append to the currently displayed value; two . in one number should not be accepted.
+
+- User Story #12: I should be able to perform any operation (+, -, *, /) on numbers containing decimal points.
+
+- User Story #13: If 2 or more operators are entered consecutively, the operation performed should be the last operator entered (excluding the negative (-) sign). For example, if 5 + * 7 = is entered, the result should be 35 (i.e. 5 * 7); if 5 * - 5 = is entered, the result should be -25 (i.e. 5 * (-5)).
+
+- User Story #14: Pressing an operator immediately following = should start a new calculation that operates on the result of the previous evaluation.
+
+- User Story #15: My calculator should have several decimal places of precision when it comes to rounding (note that there is no exact standard, but you should be able to handle calculations like 2 / 7 with reasonable precision to at least 4 decimal places).
+
+### Note On Calculator Logic: 
+It should be noted that there are two main schools of thought on calculator input logic: immediate execution logic and formula logic. Our example utilizes formula logic and observes order of operation precedence, immediate execution does not. Either is acceptable, but please note that depending on which you choose, your calculator may yield different results than ours for certain equations (see below example). As long as your math can be verified by another production calculator, please do not consider this a bug.
