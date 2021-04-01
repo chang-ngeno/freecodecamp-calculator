@@ -1,0 +1,8 @@
+@media (min-width: 1200px) {
+    #main {
+        max-width: 400px;
+    }
+}
+#display{
+    font-size: 1.5em;
+}
